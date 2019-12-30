@@ -1,4 +1,4 @@
-package com.shf.entity;
+package com.shf.user.entity;
 
 import lombok.Data;
 
@@ -7,9 +7,12 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author ChengJianSheng
- * @date 2019-02-11
- */
+ * 描述：
+ *
+ * @Author shf
+ * @Date 2019/12/27 17:58
+ * @Version V1.0
+ **/
 @Data
 @Entity
 @Table(schema = "permission", name = "sys_permission")

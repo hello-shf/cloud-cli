@@ -1,4 +1,4 @@
-package com.shf.entity;
+package com.shf.user.entity;
 
 import lombok.Data;
 
@@ -6,9 +6,12 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * @author ChengJianSheng
- * @date 2019-02-12
- */
+ * 描述：
+ *
+ * @Author shf
+ * @Date 2019/12/27 17:58
+ * @Version V1.0
+ **/
 @Data
 @Entity
 @Table(schema = "permission", name = "sys_role_permission")

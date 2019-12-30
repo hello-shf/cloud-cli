@@ -1,4 +1,4 @@
-package com.shf.controller;
+package com.shf.user.controller;
 
 import com.shf.tool.Response;
 import lombok.extern.slf4j.Slf4j;

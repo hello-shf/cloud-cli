@@ -1,6 +1,6 @@
-package com.shf.repository;
+package com.shf.user.repository;
 
-import com.shf.entity.SysPermission;
+import com.shf.user.entity.SysPermission;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
@@ -9,9 +9,12 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 /**
- * @author ChengJianSheng
- * @date 2019-02-12
- */
+ * 描述：
+ *
+ * @Author shf
+ * @Date 2019/12/27 17:58
+ * @Version V1.0
+ **/
 public interface SysPermissionRepository extends JpaSpecificationExecutor<SysPermission>, JpaRepository<SysPermission, Integer> {
 
     @Query(value = "SELECT * FROM sys_permission WHERE id IN (:ids)", nativeQuery = true)

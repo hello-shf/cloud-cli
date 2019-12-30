@@ -1,4 +1,4 @@
-package com.shf.domain;
+package com.shf.security;
 
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
@@ -7,10 +7,12 @@ import org.springframework.security.core.userdetails.User;
 import java.util.Collection;
 
 /**
- * 大部分时候直接用User即可不必扩展
- * @author ChengJianSheng
- * @date 2019-02-11
- */
+ * 描述：
+ *
+ * @Author shf
+ * @Date 2019/12/27 17:58
+ * @Version V1.0
+ **/
 @Data
 public class MyUser extends User {
 

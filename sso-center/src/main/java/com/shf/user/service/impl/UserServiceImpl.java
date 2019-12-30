@@ -1,15 +1,18 @@
-package com.shf.service.impl;
+package com.shf.user.service.impl;
 
-import com.shf.entity.SysUser;
-import com.shf.repository.SysUserRepository;
-import com.shf.service.UserService;
+import com.shf.user.entity.SysUser;
+import com.shf.user.repository.SysUserRepository;
+import com.shf.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @author ChengJianSheng
- * @date 2019-02-12
- */
+ * 描述：
+ *
+ * @Author shf
+ * @Date 2019/12/27 17:58
+ * @Version V1.0
+ **/
 @Service
 public class UserServiceImpl implements UserService {
 

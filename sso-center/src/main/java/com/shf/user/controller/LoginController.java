@@ -1,12 +1,15 @@
-package com.shf.controller;
+package com.shf.user.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * @author ChengJianSheng
- * @date 2019-02-12
- */
+ * 描述：
+ *
+ * @Author shf
+ * @Date 2019/12/27 17:58
+ * @Version V1.0
+ **/
 @Controller
 public class LoginController {
 

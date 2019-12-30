@@ -1,9 +1,10 @@
-package com.shf.service;
+package com.shf.security;
 
 import com.alibaba.fastjson.JSON;
-import com.shf.domain.MyUser;
-import com.shf.entity.SysPermission;
-import com.shf.entity.SysUser;
+import com.shf.user.entity.SysPermission;
+import com.shf.user.entity.SysUser;
+import com.shf.user.service.PermissionService;
+import com.shf.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -18,9 +19,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author ChengJianSheng
- * @date 2019-02-11
- */
+ * 描述：
+ *
+ * @Author shf
+ * @Date 2019/12/27 17:58
+ * @Version V1.0
+ **/
 @Slf4j
 @Service
 public class MyUserDetailsService implements UserDetailsService {

@@ -1,12 +1,12 @@
-package com.shf.service.impl;
+package com.shf.user.service.impl;
 
-import com.shf.entity.SysPermission;
-import com.shf.entity.SysRolePermission;
-import com.shf.entity.SysUserRole;
-import com.shf.repository.SysPermissionRepository;
-import com.shf.repository.SysRolePermissionRepository;
-import com.shf.repository.SysUserRoleRepository;
-import com.shf.service.PermissionService;
+import com.shf.user.entity.SysPermission;
+import com.shf.user.entity.SysRolePermission;
+import com.shf.user.entity.SysUserRole;
+import com.shf.user.repository.SysPermissionRepository;
+import com.shf.user.repository.SysRolePermissionRepository;
+import com.shf.user.repository.SysUserRoleRepository;
+import com.shf.user.service.PermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -15,9 +15,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * @author ChengJianSheng
- * @date 2019-02-12
- */
+ * 描述：
+ *
+ * @Author shf
+ * @Date 2019/12/27 17:58
+ * @Version V1.0
+ **/
 @Service
 public class PermissionServiceImpl implements PermissionService {
 

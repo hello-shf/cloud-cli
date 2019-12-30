@@ -1,6 +1,6 @@
-package com.shf.controller;
+package com.shf.user.controller;
 
-import com.shf.entity.device.TDeviceType;
+import com.shf.user.entity.device.TDeviceType;
 import com.shf.tool.feign.TDeviceTypeFeign;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
