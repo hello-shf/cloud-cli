@@ -1,6 +1,6 @@
 package com.shf.dao;
 
-import com.shf.entity.user.TPermission;
+import com.shf.user.entity.user.TPermission;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.CrudRepository;
 

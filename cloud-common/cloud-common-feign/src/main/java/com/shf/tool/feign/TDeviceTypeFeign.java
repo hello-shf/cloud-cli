@@ -1,6 +1,6 @@
 package com.shf.tool.feign;
 
-import com.shf.entity.device.TDeviceType;
+import com.shf.user.entity.device.TDeviceType;
 import com.shf.tool.fallback.TDeviceTypeFallBack;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;

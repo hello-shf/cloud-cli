@@ -1,8 +1,8 @@
-package com.shf.service.impl;
+package com.shf.user.service.impl;
 
 import com.shf.dao.PermissionDao;
-import com.shf.entity.user.TPermission;
-import com.shf.service.PermissionService;
+import com.shf.user.entity.user.TPermission;
+import com.shf.user.service.PermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.shf.entity.user;
+package com.shf.user.entity.user;
 
 import lombok.Data;
 

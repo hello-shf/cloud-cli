@@ -1,4 +1,4 @@
-package com.shf.entity;
+package com.shf.user.entity;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,8 +1,8 @@
-package com.shf.service.impl;
+package com.shf.user.service.impl;
 
 import com.shf.dao.UserDao;
-import com.shf.entity.user.TUser;
-import com.shf.service.UserService;
+import com.shf.user.entity.user.TUser;
+import com.shf.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

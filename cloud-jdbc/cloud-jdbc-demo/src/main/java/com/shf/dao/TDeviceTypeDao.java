@@ -1,6 +1,6 @@
 package com.shf.dao;
 
-import com.shf.entity.device.TDeviceType;
+import com.shf.user.entity.device.TDeviceType;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.CrudRepository;
 

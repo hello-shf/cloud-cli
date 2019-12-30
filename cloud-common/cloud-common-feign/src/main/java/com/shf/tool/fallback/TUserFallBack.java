@@ -1,6 +1,6 @@
 package com.shf.tool.fallback;
 
-import com.shf.entity.user.TUser;
+import com.shf.user.entity.user.TUser;
 import com.shf.tool.feign.TUserFeign;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

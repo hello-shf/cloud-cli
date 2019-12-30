@@ -1,6 +1,6 @@
 package com.shf.tool.feign;
 
-import com.shf.entity.user.TUser;
+import com.shf.user.entity.user.TUser;
 import com.shf.tool.fallback.TUserFallBack;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;

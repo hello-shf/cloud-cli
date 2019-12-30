@@ -1,6 +1,6 @@
-package com.shf.service;
+package com.shf.user.service;
 
-import com.shf.entity.user.TUser;
+import com.shf.user.entity.user.TUser;
 
 /**
  * 描述：

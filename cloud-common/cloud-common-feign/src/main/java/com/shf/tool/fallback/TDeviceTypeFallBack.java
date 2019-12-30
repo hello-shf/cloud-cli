@@ -1,6 +1,6 @@
 package com.shf.tool.fallback;
 
-import com.shf.entity.device.TDeviceType;
+import com.shf.user.entity.device.TDeviceType;
 import com.shf.tool.feign.TDeviceTypeFeign;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

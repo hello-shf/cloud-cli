@@ -1,6 +1,6 @@
-package com.shf.service;
+package com.shf.user.service;
 
-import com.shf.entity.user.TPermission;
+import com.shf.user.entity.user.TPermission;
 
 import java.util.List;
 

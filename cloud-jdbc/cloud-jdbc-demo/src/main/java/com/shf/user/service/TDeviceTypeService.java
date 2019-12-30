@@ -1,7 +1,7 @@
-package com.shf.service;
+package com.shf.user.service;
 
 
-import com.shf.entity.device.TDeviceType;
+import com.shf.user.entity.device.TDeviceType;
 
 /**
  * 描述：设备类型表服务类

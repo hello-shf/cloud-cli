@@ -1,7 +1,7 @@
 package com.shf.api;
 
-import com.shf.entity.user.TUser;
-import com.shf.service.UserService;
+import com.shf.user.entity.user.TUser;
+import com.shf.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

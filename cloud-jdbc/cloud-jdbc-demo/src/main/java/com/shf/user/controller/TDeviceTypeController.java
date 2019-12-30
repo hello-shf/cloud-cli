@@ -1,7 +1,7 @@
-package com.shf.controller;
+package com.shf.user.controller;
 
-import com.shf.service.TDeviceTypeService;
-import com.shf.entity.device.TDeviceType;
+import com.shf.user.service.TDeviceTypeService;
+import com.shf.user.entity.device.TDeviceType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

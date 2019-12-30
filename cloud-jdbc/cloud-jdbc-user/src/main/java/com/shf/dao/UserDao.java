@@ -1,6 +1,6 @@
 package com.shf.dao;
 
-import com.shf.entity.user.TUser;
+import com.shf.user.entity.user.TUser;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

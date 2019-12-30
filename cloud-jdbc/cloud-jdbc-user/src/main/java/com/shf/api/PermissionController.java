@@ -1,7 +1,7 @@
 package com.shf.api;
 
-import com.shf.entity.user.TPermission;
-import com.shf.service.PermissionService;
+import com.shf.user.entity.user.TPermission;
+import com.shf.user.service.PermissionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
