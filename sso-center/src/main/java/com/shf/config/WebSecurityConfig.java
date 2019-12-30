@@ -1,9 +1,10 @@
 package com.shf.config;
 
-import com.shf.service.MyUserDetailsService;
+import com.shf.security.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -13,9 +14,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
- * @author ChengJianSheng
- * @date 2019-02-11
- */
+ * 描述：
+ *
+ * @Author shf
+ * @Date 2019/12/27 17:58
+ * @Version V1.0
+ **/
+//@Order(-1)
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
