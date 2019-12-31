@@ -12,11 +12,11 @@ feign:
   hystrix:
     enabled: true
 zuul:
-#  ignoreSecurityHeaders: false
-#  sensitiveHeaders: Access-Control-Allow-Origin #不忽略任何头部信息，所有header都转发到下游的资源服务器。上下游session共享
-#  retryable: false
-#  add-proxy-headers: true
-#  ignored-headers: Access-Control-Allow-Origin,H-APP-Id,Token,APPToken
+  ignoreSecurityHeaders: false
+  sensitiveHeaders: Cookie,Set-Cookie #不忽略任何头部信息，所有header都转发到下游的资源服务器。上下游session共享
+  retryable: false
+  add-proxy-headers: true
+  ignored-headers: Access-Control-Allow-Origin,H-APP-Id,Token,APPToken
   routes:
     cloud-web-demo: /shf/**
 
