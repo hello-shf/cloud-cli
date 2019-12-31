@@ -1,4 +1,4 @@
-package com.shf.config;
+package com.shf.zuul.config;
 
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;

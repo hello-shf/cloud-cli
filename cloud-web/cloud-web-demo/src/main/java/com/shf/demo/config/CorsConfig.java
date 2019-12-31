@@ -1,4 +1,4 @@
-package com.shf.config;
+package com.shf.demo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

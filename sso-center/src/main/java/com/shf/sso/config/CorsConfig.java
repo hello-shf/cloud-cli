@@ -1,4 +1,4 @@
-package com.shf.config;
+package com.shf.sso.config;
 
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;

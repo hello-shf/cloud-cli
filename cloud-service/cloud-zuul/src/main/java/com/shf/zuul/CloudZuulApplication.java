@@ -1,4 +1,4 @@
-package com.shf;
+package com.shf.zuul;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

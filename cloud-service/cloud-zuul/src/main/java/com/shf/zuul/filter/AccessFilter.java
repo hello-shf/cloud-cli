@@ -1,5 +1,6 @@
-package com.shf.filter;
+package com.shf.zuul.filter;
 
+import com.alibaba.fastjson.JSON;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
@@ -7,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 /**
  * 描述：
@@ -32,8 +34,10 @@ public class AccessFilter extends ZuulFilter {
     public boolean shouldFilter() {
         RequestContext context = RequestContext.getCurrentContext();
         HttpServletRequest request = context.getRequest();
-        log.info("请求的url----->{}", request.getRequestURL());
+//        log.info("请求的url----->{}", request.getRequestURL());
         log.info("请求的URI----->{}", request.getRequestURI());
+        Map<String, String[]> requestMap = request.getParameterMap();
+        System.out.println("参数：" + JSON.toJSONString(requestMap));
         return false;
     }
 

@@ -1,4 +1,4 @@
-package com.shf.config;
+package com.shf.zuul.config;
 
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.context.annotation.Configuration;
