@@ -23,7 +23,7 @@ zuul:
 security:
   oauth2:
     client:
-      client-id: UserManagement
+      client-id: UserManagemen
       client-secret: user123
       access-token-uri: http://localhost:8080/oauth/token
       user-authorization-uri: http://localhost:8080/oauth/authorize
@@ -38,5 +38,7 @@ jwt:
 ribbon:
   ReadTimeout: 5000
   ConnectTimeout: 5000
-
+iot:
+  auth:
+    permit-all: /getVerifyCode,/login,/login_page,/login_error,/tSysUser/register,/tSysUser/isExist,/tSysDic/**,/tSysUserFindpw/find,/tSysUserFindpw/test,/tMgmt/** # 不需要授权访问的访问地址 ‘,’号相隔，不要有空格
 

@@ -16,5 +16,6 @@
 
     <modules>
         <module>shf-redis-spring-cloud-starter</module>
+        <module>shf-sso-client-spring-boot-starter</module>
     </modules>
 </project>

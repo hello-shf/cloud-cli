@@ -5,6 +5,9 @@ import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +25,7 @@ import java.util.Map;
 public class AccessFilter extends ZuulFilter {
     @Override
     public String filterType() {
-        return "pre";
+        return "post";
     }
 
     @Override
@@ -38,6 +41,11 @@ public class AccessFilter extends ZuulFilter {
         log.info("请求的URI----->{}", request.getRequestURI());
         Map<String, String[]> requestMap = request.getParameterMap();
         System.out.println("参数：" + JSON.toJSONString(requestMap));
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if(null != authentication){
+            log.info("用户名：{}", authentication.getName());
+        }
         return false;
     }
 

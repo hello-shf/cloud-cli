@@ -22,6 +22,7 @@
         <fastjson.version>1.2.15</fastjson.version>
         <spring-boot.version>2.0.4.RELEASE</spring-boot.version>
         <jackjson.version>2.9.9</jackjson.version>
+        <hutool.version>4.5.6</hutool.version>
     </properties>
 
     <modules>
@@ -35,6 +36,16 @@
     <!--依赖版本声明-->
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.shf</groupId>
+                <artifactId>shf-sso-client-spring-boot-starter</artifactId>
+                <version>${spring-cloud-cli.versiion}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.shf</groupId>
+                <artifactId>cloud-common-tool</artifactId>
+                <version>${spring-cloud-cli.versiion}</version>
+            </dependency>
             <dependency>
                 <groupId>com.shf</groupId>
                 <artifactId>cloud-common-tool</artifactId>
@@ -51,12 +62,6 @@
                 <version>${spring-cloud-cli.versiion}</version>
             </dependency>
 
-            <!--spring security jwt 相关依赖-->
-            <dependency>
-                <groupId>org.springframework.security</groupId>
-                <artifactId>spring-security-jwt</artifactId>
-                <version>1.0.9.RELEASE</version>
-            </dependency>
             <!--开发工具相关依赖版本声明-->
             <dependency>
                 <groupId>com.alibaba</groupId>
@@ -85,6 +90,11 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

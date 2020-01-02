@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://192.168.6.133:3306/demo_cjs_oauth2
+    url: jdbc:mysql://shf.com:3306/demo_cjs_oauth2
     username: root
     password: 1234
     driver-class-name: com.mysql.jdbc.Driver
@@ -9,7 +9,8 @@ spring:
   session:
     store-type: redis
   redis:
-    host: 192.168.6.133
+    host: shf.com
     port: 6379
+    database: 2
 server:
   port: 8080

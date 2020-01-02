@@ -14,42 +14,50 @@ public class Response {
     private String code;
     private String msg;
     private Object data;
+
     public Response() {
         this.code = "-200";
         this.msg = "SUCCESS";
     }
-    public Response(String code, String msg){
+
+    public Response(String code, String msg) {
         this.code = code;
         this.msg = msg;
     }
-    public Response buildSuccessResponse(){
+
+    public Response buildSuccessResponse() {
         this.code = "-200";
         this.msg = "SUCCESS";
         return this;
     }
-    public Response buildFailedResponse(){
+
+    public Response buildFailedResponse() {
         this.code = "-400";
         this.msg = "FAILED";
         return this;
     }
-    public Response buildSuccessResponse(String msg){
+
+    public Response buildSuccessResponse(String msg) {
         this.code = "-200";
         this.msg = msg;
         return this;
     }
-    public Response buildFailedResponse(String msg){
+
+    public Response buildFailedResponse(String msg) {
         this.code = "-400";
         this.msg = msg;
         return this;
     }
-    public Response buildFailedResponse(String code, String msg){
+
+    public Response buildFailedResponse(String code, String msg) {
         this.code = code;
         this.msg = msg;
         return this;
     }
-    public Response buildSuccessResponse(String code, String msg){
+
+    public Response buildSuccessResponse(String code, String msg) {
         this.code = code;
-        this.msg =  msg;
+        this.msg = msg;
         return this;
     }
 }
