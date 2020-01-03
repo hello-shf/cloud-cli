@@ -21,7 +21,8 @@ import static org.springframework.security.oauth2.provider.token.UserAuthenticat
  * @Date 2019/7/9 11:30
  * @Version V1.0
  **/
-public class PrexCustomJwtAccessTokenConverter extends JwtAccessTokenConverter {
+@Deprecated
+public class CustomJwtAccessTokenConverter extends JwtAccessTokenConverter {
 
     /**
      * token增强器
@@ -60,7 +61,7 @@ public class PrexCustomJwtAccessTokenConverter extends JwtAccessTokenConverter {
     @Override
     public OAuth2Authentication extractAuthentication(Map<String, ?> map) {
         DefaultAccessTokenConverter accessTokenConverter = new DefaultAccessTokenConverter();
-        UserAuthenticationConverter userAuthenticationConverter = new PrexUserAuthenticationConverter();
+        UserAuthenticationConverter userAuthenticationConverter = new CustomUserAuthenticationConverter();
         accessTokenConverter.setUserTokenConverter(userAuthenticationConverter);
         return accessTokenConverter.extractAuthentication(map);
 

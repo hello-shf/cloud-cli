@@ -1,4 +1,4 @@
-package com.shf.sso.server.security.handler;
+package com.shf.sso.client.handler;
 
 import cn.hutool.core.util.CharsetUtil;
 import com.alibaba.fastjson.JSON;
@@ -20,14 +20,15 @@ import java.util.Map;
  * @Date 2019/7/9 11:30
  * @Version V1.0
  **/
-public class PrexCustomAccessDeniedHandler implements AccessDeniedHandler {
+@Deprecated
+public class CustomAccessDeniedHandler implements AccessDeniedHandler {
 
 
     @Override
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) throws IOException, ServletException {
         Map<String, Object> map = new HashMap<>();
         map.put("code", 401);
-        map.put("msg", "抱歉,没有权限,请联系管理员");
+        map.put("msg", "抱歉,没有权限,请联系管理员李浩东");
         map.put("path", request.getServletPath());
         map.put("timestamp", System.nanoTime());
         response.setCharacterEncoding(CharsetUtil.UTF_8);

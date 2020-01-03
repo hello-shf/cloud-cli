@@ -12,13 +12,14 @@ import java.util.Collection;
 import java.util.Map;
 
 /**
- * @Classname AdditionalUserAuthenticationConverter
- * @Description 解析jwt并将信息放入Authentication
- * @Author Created by Lihaodong (alias:小东啊) im.lihaodong@gmail.com
- * @Date 2019-09-10 10:54
- * @Version 1.0
- */
-public class PrexUserAuthenticationConverter extends DefaultUserAuthenticationConverter {
+ * 描述：解析jwt并将信息放入Authentication
+ * 弃用
+ * @Author shf
+ * @Date 2019/7/9 11:30
+ * @Version V1.0
+ **/
+@Deprecated
+public class CustomUserAuthenticationConverter extends DefaultUserAuthenticationConverter {
 
     @Override
     public Authentication extractAuthentication(Map<String, ?> map) {

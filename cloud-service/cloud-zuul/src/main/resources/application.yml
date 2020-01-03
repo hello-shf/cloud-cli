@@ -41,4 +41,8 @@ ribbon:
 iot:
   auth:
     permit-all: /getVerifyCode,/login,/login_page,/login_error,/tSysUser/register,/tSysUser/isExist,/tSysDic/**,/tSysUserFindpw/find,/tSysUserFindpw/test,/tMgmt/** # 不需要授权访问的访问地址 ‘,’号相隔，不要有空格
-
+spring:
+  redis:
+    host: shf.com
+    port: 6379
+    database: 2

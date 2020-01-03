@@ -1,11 +1,10 @@
 package com.shf.sso.server.config;
 
-import com.shf.sso.server.security.exception.PrexCustomWebResponseExceptionTranslator;
-import com.shf.sso.server.security.token.PrexCustomJwtAccessTokenConverter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
@@ -13,10 +12,8 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.A
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
-import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
-import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
-import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
+import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
 
 import javax.annotation.Resource;
 import javax.sql.DataSource;
@@ -61,8 +58,8 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
         endpoints
                 //指定token存储位置
                 .tokenStore(tokenStore())
-                // 配置JwtAccessToken转换器
-                .accessTokenConverter(accessTokenConverter())
+                // 配置JwtAccessToken转换器 TODO token增强
+//                .accessTokenConverter(accessTokenConverter())
 //                .tokenEnhancer(tokenEnhancerChain)
                 //指定认证管理器,当你选择了资源所有者密码（password）授权类型的时候，需设置这个属性注入一个 AuthenticationManager 对象。
                 .authenticationManager(authenticationManager)
@@ -79,7 +76,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 //        tokenServices.setAccessTokenValiditySeconds((int) TimeUnit.MINUTES.toSeconds(20));
 //        endpoints.tokenServices(tokenServices);
 
-        endpoints.exceptionTranslator(new PrexCustomWebResponseExceptionTranslator());
+//        endpoints.exceptionTranslator(new PrexCustomWebResponseExceptionTranslator());
     }
 
     /**
@@ -101,10 +98,19 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
                 // 开启/oauth/check_token验证端口认证权限访问
                 .checkTokenAccess("permitAll()");
     }
-
+    @Autowired
+    private RedisConnectionFactory redisConnectionFactory;
     @Bean
+    public TokenStore tokenStore(){
+        return new RedisTokenStore(redisConnectionFactory);
+    }
+}
+//以下是采用token增强方式，将用户信息统统塞到token中，资源服务器只需要解析token即可。
+// 但是存在一个很大的问题，资源服务器不能立即感知到认证服务器的登出。
+// TODO token增强
+    /*@Bean
     public JwtAccessTokenConverter accessTokenConverter() {
-        JwtAccessTokenConverter converter = new PrexCustomJwtAccessTokenConverter();
+        JwtAccessTokenConverter converter = new CustomJwtAccessTokenConverter();
         converter.setSigningKey("123");
         return converter;
     }
@@ -115,18 +121,14 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
         defaultTokenServices.setTokenStore(tokenStore());
         return defaultTokenServices;
 
-    }
+    }*/
 
-    /**
-     * 它可以把令牌相关的数据进行编码，声明TokenStore实现
-     *
-     * @return
-     */
-    @Bean
+/*
+ * 它可以把令牌相关的数据进行编码，声明TokenStore实现
+ *
+ * @return
+ */
+    /*@Bean
     public TokenStore tokenStore() {
         return new JwtTokenStore(accessTokenConverter());
-    }
-
-
-
-}
+    }*/

@@ -17,7 +17,8 @@ import java.util.Map;
  * @Date 2019/7/9 11:30
  * @Version V1.0
  **/
-public class PrexAuthExceptionEntryPoint implements AuthenticationEntryPoint {
+@Deprecated
+public class CustomAuthExceptionEntryPoint implements AuthenticationEntryPoint {
     /**
      * token错误时进入到这里
      *

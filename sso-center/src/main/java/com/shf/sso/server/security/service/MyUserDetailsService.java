@@ -9,6 +9,7 @@ import com.shf.sso.server.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -55,7 +56,7 @@ public class MyUserDetailsService implements UserDetailsService {
             }
         }
 
-        MyUser myUser = new MyUser(sysUser.getUsername(), passwordEncoder.encode(sysUser.getPassword()), authorityList);
+        User myUser = new User(sysUser.getUsername(), passwordEncoder.encode(sysUser.getPassword()), authorityList);
 
         log.info("登录成功！用户: {}", JSON.toJSONString(myUser));
 

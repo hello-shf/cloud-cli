@@ -18,7 +18,8 @@ import java.util.Map;
  * @Date 2019/7/9 11:30
  * @Version V1.0
  **/
-public class PrexUserAuthenticationConverter extends DefaultUserAuthenticationConverter {
+@Deprecated
+public class CustomUserAuthenticationConverter extends DefaultUserAuthenticationConverter {
 
     @Override
     public Authentication extractAuthentication(Map<String, ?> map) {
