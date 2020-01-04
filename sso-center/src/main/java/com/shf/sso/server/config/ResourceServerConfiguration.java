@@ -2,8 +2,11 @@ package com.shf.sso.server.config;
 
 import cn.hutool.core.util.CharsetUtil;
 import com.alibaba.fastjson.JSON;
+import com.shf.sso.server.security.properties.AuthProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -31,34 +34,21 @@ import java.util.Map;
  * @Date 2019/7/9 11:30
  * @Version V1.0
  **/
+@EnableConfigurationProperties(AuthProperties.class)
 @Primary
 @Slf4j
 @Configuration
 @EnableResourceServer
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
-    /**
-     * security的鉴权排除的url列表
-     */
-    private static final String[] EXCLUDED_AUTH_PAGES = {
-            "/swagger-ui.html",
-            "/swagger-resources/**",
-            "/*/v2/api-docs",
-            "/v2/api-docs",
-            "/api/socket/**",
-            "/log",
-            "/*/api-docs",
-            "/actuator/health",
-            "/sendCode/**", "/mobile/login/**", "/socialSignUp", "/oauth/**", "/user/**",
-            "/css/**", "/js/**", "/images/**", "/webjars/**", "**/favicon.ico", "/index","/captcha.jpg",
-            "/*.html", "/**/*.html", "/**/*.css", "/**/*.js"
-    };
+    @Autowired
+    private AuthProperties authProperties;
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers(EXCLUDED_AUTH_PAGES).permitAll()
+                .antMatchers(authProperties.getPermitAll()).permitAll()
                 .anyRequest()
                 .authenticated()
                 // 短信登录配置
@@ -83,6 +73,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
             map.put("path", request.getServletPath());
             map.put("timestamp", System.currentTimeMillis());
             response.setContentType("application/json");
+            response.setCharacterEncoding(CharsetUtil.UTF_8);
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             try {
                 ObjectMapper mapper = new ObjectMapper();
