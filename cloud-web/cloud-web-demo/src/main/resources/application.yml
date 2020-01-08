@@ -6,9 +6,15 @@ eureka:
       defaultZone: http://localhost:6060/eureka/
   instance:
     prefer-ip-address: true
+#---------------------spring配置-------------------------------#
 spring:
   application:
     name: cloud-web-demo
+  datasource:
+    url: jdbc:mysql://shf.com:3306/demo_cjs_oauth2?characterEncoding=UTF-8&useUnicode=true&useSSL=false
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.jdbc.Driver
 feign:
   hystrix:
     enabled: true

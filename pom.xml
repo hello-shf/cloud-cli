@@ -23,6 +23,8 @@
         <spring-boot.version>2.0.4.RELEASE</spring-boot.version>
         <jackjson.version>2.9.9</jackjson.version>
         <hutool.version>4.5.6</hutool.version>
+        <mybatis-plus-version>2.2.0</mybatis-plus-version>
+        <swagger-version>2.6.1</swagger-version>
     </properties>
 
     <modules>
@@ -36,14 +38,31 @@
     <!--依赖版本声明-->
     <dependencyManagement>
         <dependencies>
+            <!--swagger-ui-->
             <dependency>
-                <groupId>com.shf</groupId>
-                <artifactId>shf-sso-client-spring-boot-starter</artifactId>
-                <version>${spring-cloud-cli.versiion}</version>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger-version}</version>
+            </dependency>
+            <!--数据库相关依赖-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-support</artifactId>
+                <version>${mybatis-plus-version}</version>
             </dependency>
             <dependency>
                 <groupId>com.shf</groupId>
-                <artifactId>cloud-common-tool</artifactId>
+                <artifactId>shf-sso-client-spring-boot-starter</artifactId>
                 <version>${spring-cloud-cli.versiion}</version>
             </dependency>
             <dependency>
@@ -119,4 +138,12 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

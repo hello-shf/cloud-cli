@@ -25,11 +25,11 @@ security:
     client:
       client-id: UserManagemen
       client-secret: user123
-      access-token-uri: http://localhost:8080/oauth/token
-      user-authorization-uri: http://localhost:8080/oauth/authorize
+      access-token-uri: http://localhost:8010/oauth/token
+      user-authorization-uri: http://localhost:8010/oauth/authorize
     resource:
       jwt:
-        key-uri: http://localhost:8080/oauth/token_key
+        key-uri: http://localhost:8010/oauth/token_key
 jwt:
   tokenHead: Bearer
   header: Authorization
@@ -46,3 +46,5 @@ spring:
     host: shf.com
     port: 6379
     database: 2
+  application:
+    name: cloud-zuul

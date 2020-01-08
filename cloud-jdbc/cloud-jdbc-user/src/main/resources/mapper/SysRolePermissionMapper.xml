@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.shf.jdbc.user.mapper.SysRolePermissionMapper">
+    <!-- 自定义方法编写区域 -->
+
+
+
+
+
+    <!-- 自定义方法编写区域 -->
+
+
+
+    <!-- ******************************************** sql块配置开始 ************************************************ -->
+
+    <!-- 所有列 -->
+    <sql id="all_column">
+            t.id,
+            t.role_id,
+            t.permission_id,
+            t.id
+    </sql>
+    <!-- 条件查询 -->
+    <sql id="all_condition">
+        <if test="id != null and id != ''">
+            and t.id = #{id}
+        </if>
+            <if test="id != null and id != ''">
+            and t.id = #{id}
+        </if>
+            <if test="roleId != null and roleId != ''">
+            and t.role_id = #{roleId}
+        </if>
+            <if test="permissionId != null and permissionId != ''">
+            and t.permission_id = #{permissionId}
+        </if>
+        </sql>
+    <!-- 动态更新 -->
+    <sql id="all_condition_update">
+            <if test="id != null">`id` = #{id}, </if>
+            <if test="roleId != null">`role_id` = #{roleId}, </if>
+            <if test="permissionId != null">`permission_id` = #{permissionId}, </if>
+        </sql>
+    <!-- ******************************************** sql块配置结束 ************************************************ -->
+
+
+</mapper>

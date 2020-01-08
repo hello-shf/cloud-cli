@@ -13,7 +13,7 @@ spring:
     port: 6379
     database: 2
 server:
-  port: 8080
+  port: 8010
 iot:
   auth:
     permit-all: /oauth/token,/*.html,/api/**,/webjars/**,/swagger-resources/**,/v2/** #静态文件

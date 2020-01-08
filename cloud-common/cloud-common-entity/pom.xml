@@ -15,9 +15,21 @@
     <description>Demo project for Spring Boot</description>
 
     <dependencies>
+        <!--swagger-ui-->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger-version}</version>
+        </dependency>
+        <!--数据库相关依赖-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-support</artifactId>
         </dependency>
         <!--工具依赖版本开始-->
         <dependency>
@@ -27,6 +39,10 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.shf</groupId>
+            <artifactId>cloud-common-tool</artifactId>
         </dependency>
     </dependencies>
 </project>

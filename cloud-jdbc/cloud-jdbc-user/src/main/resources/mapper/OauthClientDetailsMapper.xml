@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.shf.jdbc.user.mapper.OauthClientDetailsMapper">
+    <!-- 自定义方法编写区域 -->
+
+
+
+
+
+    <!-- 自定义方法编写区域 -->
+
+
+
+    <!-- ******************************************** sql块配置开始 ************************************************ -->
+
+    <!-- 所有列 -->
+    <sql id="all_column">
+            t.client_id,
+            t.resource_ids,
+            t.client_secret,
+            t.scope,
+            t.authorized_grant_types,
+            t.web_server_redirect_uri,
+            t.authorities,
+            t.access_token_validity,
+            t.refresh_token_validity,
+            t.additional_information,
+            t.autoapprove,
+            t.client_id
+    </sql>
+    <!-- 条件查询 -->
+    <sql id="all_condition">
+        <if test="clientId != null and clientId != ''">
+            and t.client_id = #{clientId}
+        </if>
+            <if test="clientId != null and clientId != ''">
+            and t.client_id = #{clientId}
+        </if>
+            <if test="resourceIds != null and resourceIds != ''">
+            and t.resource_ids = #{resourceIds}
+        </if>
+            <if test="clientSecret != null and clientSecret != ''">
+            and t.client_secret = #{clientSecret}
+        </if>
+            <if test="scope != null and scope != ''">
+            and t.scope = #{scope}
+        </if>
+            <if test="authorizedGrantTypes != null and authorizedGrantTypes != ''">
+            and t.authorized_grant_types = #{authorizedGrantTypes}
+        </if>
+            <if test="webServerRedirectUri != null and webServerRedirectUri != ''">
+            and t.web_server_redirect_uri = #{webServerRedirectUri}
+        </if>
+            <if test="authorities != null and authorities != ''">
+            and t.authorities = #{authorities}
+        </if>
+            <if test="accessTokenValidity != null and accessTokenValidity != ''">
+            and t.access_token_validity = #{accessTokenValidity}
+        </if>
+            <if test="refreshTokenValidity != null and refreshTokenValidity != ''">
+            and t.refresh_token_validity = #{refreshTokenValidity}
+        </if>
+            <if test="additionalInformation != null and additionalInformation != ''">
+            and t.additional_information = #{additionalInformation}
+        </if>
+            <if test="autoapprove != null and autoapprove != ''">
+            and t.autoapprove = #{autoapprove}
+        </if>
+        </sql>
+    <!-- 动态更新 -->
+    <sql id="all_condition_update">
+            <if test="clientId != null">`client_id` = #{clientId}, </if>
+            <if test="resourceIds != null">`resource_ids` = #{resourceIds}, </if>
+            <if test="clientSecret != null">`client_secret` = #{clientSecret}, </if>
+            <if test="scope != null">`scope` = #{scope}, </if>
+            <if test="authorizedGrantTypes != null">`authorized_grant_types` = #{authorizedGrantTypes}, </if>
+            <if test="webServerRedirectUri != null">`web_server_redirect_uri` = #{webServerRedirectUri}, </if>
+            <if test="authorities != null">`authorities` = #{authorities}, </if>
+            <if test="accessTokenValidity != null">`access_token_validity` = #{accessTokenValidity}, </if>
+            <if test="refreshTokenValidity != null">`refresh_token_validity` = #{refreshTokenValidity}, </if>
+            <if test="additionalInformation != null">`additional_information` = #{additionalInformation}, </if>
+            <if test="autoapprove != null">`autoapprove` = #{autoapprove}, </if>
+        </sql>
+    <!-- ******************************************** sql块配置结束 ************************************************ -->
+
+
+</mapper>

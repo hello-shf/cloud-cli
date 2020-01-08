@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.shf.jdbc.user.mapper.SysUserMapper">
+    <!-- 自定义方法编写区域 -->
+
+
+
+
+
+    <!-- 自定义方法编写区域 -->
+
+
+
+    <!-- ******************************************** sql块配置开始 ************************************************ -->
+
+    <!-- 所有列 -->
+    <sql id="all_column">
+            t.id,
+            t.username,
+            t.password,
+            t.nickname,
+            t.email,
+            t.status,
+            t.create_user,
+            t.create_time,
+            t.update_user,
+            t.update_time,
+            t.id
+    </sql>
+    <!-- 条件查询 -->
+    <sql id="all_condition">
+        <if test="id != null and id != ''">
+            and t.id = #{id}
+        </if>
+            <if test="id != null and id != ''">
+            and t.id = #{id}
+        </if>
+            <if test="username != null and username != ''">
+            and t.username = #{username}
+        </if>
+            <if test="password != null and password != ''">
+            and t.password = #{password}
+        </if>
+            <if test="nickname != null and nickname != ''">
+            and t.nickname = #{nickname}
+        </if>
+            <if test="email != null and email != ''">
+            and t.email = #{email}
+        </if>
+            <if test="status != null and status != ''">
+            and t.status = #{status}
+        </if>
+            <if test="createUser != null and createUser != ''">
+            and t.create_user = #{createUser}
+        </if>
+            <if test="createTime != null and createTime != ''">
+            and t.create_time = #{createTime}
+        </if>
+            <if test="updateUser != null and updateUser != ''">
+            and t.update_user = #{updateUser}
+        </if>
+            <if test="updateTime != null and updateTime != ''">
+            and t.update_time = #{updateTime}
+        </if>
+        </sql>
+    <!-- 动态更新 -->
+    <sql id="all_condition_update">
+            <if test="id != null">`id` = #{id}, </if>
+            <if test="username != null">`username` = #{username}, </if>
+            <if test="password != null">`password` = #{password}, </if>
+            <if test="nickname != null">`nickname` = #{nickname}, </if>
+            <if test="email != null">`email` = #{email}, </if>
+            <if test="status != null">`status` = #{status}, </if>
+            <if test="createUser != null">`create_user` = #{createUser}, </if>
+            <if test="createTime != null">`create_time` = #{createTime}, </if>
+            <if test="updateUser != null">`update_user` = #{updateUser}, </if>
+            <if test="updateTime != null">`update_time` = #{updateTime}, </if>
+        </sql>
+    <!-- ******************************************** sql块配置结束 ************************************************ -->
+
+
+</mapper>

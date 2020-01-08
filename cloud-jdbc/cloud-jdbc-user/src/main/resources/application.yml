@@ -1,24 +1,29 @@
 server:
   port: 8051
-spring:
-  application:
-    name: cloud-jdbc-user
-  datasource:
-    url: jdbc:mysql://localhost:3306/security?characterEncoding=UTF-8&useUnicode=true&useSSL=false
-    username: root
-    password:
-    driver-class-name: com.mysql.jdbc.Driver
-  jpa:
-    database: MYSQL
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-      naming:
-        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL5Dialect
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:6060/eureka/
+#---------------------spring配置-------------------------------#
+spring:
+  application:
+    name: cloud-jdbc-user
+  datasource:
+    url: jdbc:mysql://shf.com:3306/demo_cjs_oauth2?characterEncoding=UTF-8&useUnicode=true&useSSL=false
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.jdbc.Driver
+#---------------------mybatis-plus配置-------------------------------#
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*/*.xml
+  global-config:
+    id-type: 0  # 0:数据库ID自增   1:用户输入id  2:全局唯一id(IdWorker)  3:全局唯一ID(uuid)
+    db-column-underline: false
+    refresh-mapper: true
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true #配置的缓存的全局开关
+    lazyLoadingEnabled: true #延时加载的开关
+    multipleResultSetsEnabled: true #开启的话，延时加载一个属性时会加载该对象全部属性，否则按需加载属性
+    call-setters-on-nulls: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #配置打印sql

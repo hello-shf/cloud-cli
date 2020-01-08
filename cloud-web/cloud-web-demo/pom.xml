@@ -11,7 +11,7 @@
     <artifactId>cloud-web-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>cloud-web-shf</name>
+    <name>cloud-web-demo</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -19,6 +19,14 @@
     </properties>
         
     <dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.shf</groupId>
             <artifactId>cloud-common-tool</artifactId>
@@ -36,12 +44,6 @@
             <groupId>com.shf</groupId>
             <artifactId>cloud-common-entity</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-data-jpa</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.shf</groupId>
