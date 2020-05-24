@@ -1,10 +1,12 @@
 package com.shf.sso.server.config;
 
+import com.shf.sso.server.filter.AppAuthenticationProcessFilter;
 import com.shf.sso.server.security.service.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -12,6 +14,9 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
  * 描述：授权服务器 主要是配置客户端信息和认证信息
@@ -24,16 +29,21 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
+    @Autowired
+    private TokenStore tokenStore;
 
     @Autowired
     private MyUserDetailsService myUserDetailsService;
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
+        AppAuthenticationProcessFilter appAuthenticationProcessFilter =
+                new AppAuthenticationProcessFilter(tokenStore);
         httpSecurity.csrf().disable()
                 .authorizeRequests()
                 .anyRequest()
                 .authenticated();
+        httpSecurity.addFilterAfter(appAuthenticationProcessFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
     /**
@@ -67,5 +77,4 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .userDetailsService(myUserDetailsService)
                 .passwordEncoder(passwordEncoder());
     }
-
 }

@@ -29,6 +29,8 @@ import javax.sql.DataSource;
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
+    @Autowired
+    private RedisConnectionFactory redisConnectionFactory;
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -98,8 +100,6 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
                 // 开启/oauth/check_token验证端口认证权限访问
                 .checkTokenAccess("permitAll()");
     }
-    @Autowired
-    private RedisConnectionFactory redisConnectionFactory;
     @Bean
     public TokenStore tokenStore(){
         return new RedisTokenStore(redisConnectionFactory);
