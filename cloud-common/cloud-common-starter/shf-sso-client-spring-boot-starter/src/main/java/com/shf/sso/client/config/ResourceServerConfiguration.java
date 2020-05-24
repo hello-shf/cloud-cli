@@ -44,7 +44,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     @Autowired
     private RedisConnectionFactory redisConnectionFactory;
     /**
-     * security的鉴权排除的url列表
+     * security的鉴权排除的url列表 v2
      */
     private static final String[] EXCLUDED_AUTH_PAGES = {
             "/swagger-ui.html",
