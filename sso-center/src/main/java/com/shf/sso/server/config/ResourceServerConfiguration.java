@@ -89,7 +89,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
         return (HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) -> {
             Map<String, Object> map = new HashMap<>();
             map.put("code", 401);
-            map.put("msg", "抱歉,没有权限,请联系管理员李浩东");
+            map.put("msg", "抱歉,没有权限,请联系管理员");
             map.put("path", request.getServletPath());
             map.put("timestamp", System.nanoTime());
             response.setCharacterEncoding(CharsetUtil.UTF_8);

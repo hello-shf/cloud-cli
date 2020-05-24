@@ -27,4 +27,5 @@ public class SysUserController {
     public Rs single(SysUser user){
         return sysUserFegin.querySingle(user);
     }
+
 }
